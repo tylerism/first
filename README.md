@@ -14,8 +14,8 @@ Installing this code is easy. Just follow the steps and you will be good.
 3. finish installation
 
 ## Generating SSH Keys
-	cd ~/.ssh
-	ls
+	$ cd ~/.ssh
+	$ ls
 
 If you have id_rsa and id_rsa.pub but do not remember making them, then delete them and generate them.
 
@@ -31,7 +31,7 @@ If you have id_rsa and id_rsa.pub but do not remember making them, then delete t
 
 Run the following code to copy the key to your clipboard.
 
-	clip < ~/.ssh/id_rsa.pub
+	$ clip < ~/.ssh/id_rsa.pub
 	# Copies the contents of the id_rsa.pub file to your clipboard
 	Alternatively, using your favorite text editor, you can open the ~/.ssh/id_rsa.pub file and copy the contents of the file manually.
 
@@ -46,7 +46,7 @@ Run the following code to copy the key to your clipboard.
 
 To make sure everything is working you'll now SSH to GitHub. When you do this, you will be asked to authenticate this action using your password, which for this purpose is the passphrase you created earlier. Don't change the git@github.com part. That's supposed to be there.
 
-	ssh -T git@github.com
+	$ ssh -T git@github.com
 	# Attempts to ssh to github
 
 	The authenticity of host 'github.com (207.97.227.239)' can't be established.
