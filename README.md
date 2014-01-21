@@ -3,18 +3,19 @@ Installing
 Installing this code is easy. Just follow the steps and you will be good.
 
 ## Updating ubuntu
-1. $ apt-get update
-2. $ apt-get upgrade
+	$ apt-get update
+	$ apt-get upgrade
 
 ## Installing git
-1. run the command "git"
-2. if installed already skip installation
-3. else sudo apt-get install git-core
-4. finish installation
+	$ git
+
+1. if installed already skip installation
+2. else sudo apt-get install git-core
+3. finish installation
 
 ## Generating SSH Keys
-1. cd ~/.ssh
-2. ls
+	cd ~/.ssh
+	ls
 
 If you have id_rsa and id_rsa.pub but do not remember making them, then delete them and generate them.
 
