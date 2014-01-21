@@ -40,3 +40,18 @@ Run the following code to copy the key to your clipboard.
 4. The key fieldPaste your key into the "Key" field
 5. The Add key buttonClick "Add key"
 6. Confirm the action by entering your GitHub password	
+
+##Test everything out
+
+To make sure everything is working you'll now SSH to GitHub. When you do this, you will be asked to authenticate this action using your password, which for this purpose is the passphrase you created earlier. Don't change the git@github.com part. That's supposed to be there.
+
+	ssh -T git@github.com
+	# Attempts to ssh to github
+
+	The authenticity of host 'github.com (207.97.227.239)' can't be established.
+	# RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+	# Are you sure you want to continue connecting (yes/no)?
+	Don't worry, this is supposed to happen. Verify that the fingerprint matches the one here and type "yes".
+
+	# Hi username! You've successfully authenticated, but GitHub does not
+	# provide shell access.
