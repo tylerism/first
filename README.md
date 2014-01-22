@@ -1,4 +1,4 @@
-ddInstalling
+Installing
 =====
 Installing this code is easy. Just follow the steps and you will be good.
 
