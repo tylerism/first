@@ -16,9 +16,15 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
-			
+			<div style="position:fixed; z-index:9; background:red; width:600px;height:600px; right:0 top:0;">
+
+
+					<?php get_sidebar();?>		
+					
+					</div>	
 			<div class="light_grey_back p50">
-				<div class="container">					
+				<div class="container">		
+					
 					<div class="sub_section" style="overflow:visible">
 							<?php while ( have_posts() ) : the_post(); ?>
 				<?php the_content(); ?>

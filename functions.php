@@ -1,50 +1,28 @@
 <?php
-remove_filter( 'the_content', 'wpautop' );
-//add_filter( 'the_content', 'wpautop' , 99 );
-//add_filter( 'the_content', 'shortcode_unautop', 100 );
-function colourBrightness($hex, $percent) {
-		// Work out if hash given
-		$hash = '';
-		if (stristr($hex,'#')) {
-			$hex = str_replace('#','',$hex);
-			$hash = '#';
-		}
-		/// HEX TO RGB
-		$rgb = array(hexdec(substr($hex,0,2)), hexdec(substr($hex,2,2)), hexdec(substr($hex,4,2)));
-		//// CALCULATE
-		for ($i=0; $i<3; $i++) {
-			// See if brighter or darker
-			if ($percent > 0) {
-				// Lighter
-				$rgb[$i] = round($rgb[$i] * $percent) + round(255 * (1-$percent));
-			} else {
-				// Darker
-				$positivePercent = $percent - ($percent*2);
-				$rgb[$i] = round($rgb[$i] * $positivePercent) + round(0 * (1-$positivePercent));
-			}
-			// In case rounding up causes us to go to 256
-			if ($rgb[$i] > 255) {
-				$rgb[$i] = 255;
-			}
-		}
-		//// RBG to Hex
-		$hex = '';
-		for($i=0; $i < 3; $i++) {
-			// Convert the decimal digit to hex
-			$hexDigit = dechex($rgb[$i]);
-			// Add a leading zero if necessary
-			if(strlen($hexDigit) == 1) {
-			$hexDigit = "0" . $hexDigit;
-			}
-			// Append to the hex string
-			$hex .= $hexDigit;
-		}
-		return $hash.$hex;
-	}
-/*
-function themeocracy_dynamic_style($args=null) { 
-	$args_string = '?css=' . urlencode( serialize( $args ) );
-	wp_enqueue_style( 'themeocracy', get_bloginfo('template_directory') . '/style.php?'.$args_string, array(), '', 'screen, projection' );
-}
-add_action('wp_enqueue_scripts', 'themeocracy_dynamic_style');*/
+
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/lib/template-tags.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_template_directory() . '/lib/extras.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/lib/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/lib/jetpack.php';
+
+require get_template_directory() . '/lib/functions.php';
+
+
+
 ?>
