@@ -1,5 +1,5 @@
 <?php
-die();
+
 /**
  * The template for displaying all pages.
  *
